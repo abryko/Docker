@@ -444,7 +444,7 @@ resources:
                                 timeoutSeconds: 5
                               args:
                               # command = "/kube-dns"
-                              - --domain=$domain
+                              - --domain=$domain.
                               - --dns-port=10053
                               ports:
                               - containerPort: 10053
