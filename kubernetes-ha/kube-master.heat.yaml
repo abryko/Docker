@@ -285,6 +285,7 @@ resources:
                       - --service-account-private-key-file=/etc/kubernetes/ssl/apiserver-key.pem
                       - --pod-eviction-timeout=1m0s
                       - --root-ca-file=/etc/kubernetes/ssl/ca.pem
+                      - --leader-elect=true
                       livenessProbe:
                         httpGet:
                           host: 127.0.0.1
@@ -385,7 +386,7 @@ resources:
                       spec:
                         selector:
                           k8s-app: kube-dns
-                        clusterIP:  10.0.2.2
+                        clusterIP: 10.0.2.2
                         ports:
                         - name: dns
                           port: 53
